@@ -51,13 +51,3 @@ npm test
 รายการในครั้งนี้แสดงเฉพาะธุรกรรมจากหน้าที่เปิดอยู่ ไม่ใช่ประวัติทั้งหมด และจะหายเมื่อ reload
 ถ้ารอนานหรือการอ่าน receipt ล้มเหลว ให้ตรวจ Etherscan ก่อนทำรายการซ้ำ
 Contract ยึดตามโจทย์และใช้ `transfer` จึงเหมาะกับบัญชีทดสอบทั่วไป ไม่ได้ออกแบบรองรับ smart-contract wallet ทุกแบบ
-
-## นำขึ้น GitHub Pages
-
-1. สร้าง GitHub repository แล้วอัปโหลด `index.html`, `styles.css`, `app.js`, `bank.mjs`, `config.js`, `favicon.svg` และ `.nojekyll` ไว้ที่ root ของ branch `main`
-2. ไป Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save
-3. รอ GitHub แสดง URL ของ Pages แล้วเปิดทดสอบด้วย MetaMask
-4. ใน Infura เพิ่ม origin ของเว็บ เช่น `https://YOUR_USERNAME.github.io` ใน Allowed Origins ถ้าเปิดใช้ข้อจำกัดไว้ (ไม่ใส่ path ของ repository)
-5. ทดสอบครบก่อนนำ URL ไปส่งใน dlearning
-
-GitHub Pages เผยแพร่ไฟล์และข้อมูลนักศึกษาเป็นสาธารณะ ใช้เฉพาะ Sepolia test ETH
