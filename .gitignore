@@ -3,3 +3,5 @@ output/
 assignment-preview.png
 *.log
 .env*
+README.md
+
