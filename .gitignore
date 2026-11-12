@@ -1,0 +1,5 @@
+node_modules/
+output/
+assignment-preview.png
+*.log
+.env*

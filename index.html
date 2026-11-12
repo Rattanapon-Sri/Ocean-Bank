@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152C4F">
+  <meta name="description" content="Bank DApp บน Sepolia โดย รัตนพล ศรีโนนยาง 66044213">
+  <title>Ocean Bank | Sepolia DApp</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+  <header class="topbar wrap">
+    <a class="brand" href="./" aria-label="Ocean Bank หน้าหลัก"><span class="brand-mark" aria-hidden="true">≈</span><span>Ocean<span class="brand-light"> Bank</span></span></a>
+    <div class="header-actions"><span class="network-pill"><span class="dot"></span>Sepolia Testnet</span><button id="connect" class="button primary" disabled>เชื่อมต่อ MetaMask</button></div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="intro"><div><p class="intro-note">ธนาคารบนบล็อกเชนของคุณ</p><h1>ทุกยอดเงิน<br>ตรวจสอบได้ด้วยตัวคุณเอง</h1><p class="intro-description">ฝาก ถอน และตรวจสอบยอดผ่าน Smart Contract<br class="desktop-break">โดยคุณเป็นผู้อนุมัติทุกธุรกรรมจากกระเป๋าของคุณ</p></div><div class="student"><span class="student-avatar" aria-hidden="true">ร</span><div><p>รัตนพล ศรีโนนยาง</p><span>รหัสนักศึกษา 66044213</span></div></div></section>
+    <div class="bank-grid">
+      <section class="balance-panel" aria-labelledby="balance-title">
+        <div class="panel-top"><h2 id="balance-title">ยอดเงินฝากของคุณ</h2><span class="balance-symbol" aria-hidden="true">Ξ</span></div>
+        <div class="balance-amount"><span id="bank-balance">—</span><span class="unit">ETH</span></div>
+        <p class="balance-caption" id="balance-caption">เชื่อมต่อกระเป๋าเพื่อดูยอดเงินฝาก</p>
+        <button id="refresh" class="button balance-refresh" disabled>↻ ตรวจสอบยอดเงิน</button>
+        <div class="wallet-detail"><span>กระเป๋าที่เชื่อมต่อ</span><p id="account">ยังไม่ได้เชื่อมต่อ</p><div class="wallet-footer"><span>ยอดในกระเป๋า</span><strong id="wallet-balance">— ETH</strong></div></div>
+        <div class="balance-footnote"><span aria-hidden="true">ⓘ</span><p>ยอดเงินฝากคือยอดใน Contract ซึ่งแยกจากยอด ETH ที่อยู่ในกระเป๋า MetaMask</p></div>
+      </section>
+      <section class="transaction-panel" aria-labelledby="transaction-title">
+        <div class="section-heading"><h2 id="transaction-title">จัดการเงินฝาก</h2><span class="small-tag">Sepolia ETH</span></div>
+        <div class="tabs" role="group" aria-label="เลือกประเภทธุรกรรม"><button id="tab-deposit" aria-pressed="true" class="tab active">ฝากเงิน <span>Deposit</span></button><button id="tab-withdraw" aria-pressed="false" class="tab">ถอนเงิน <span>Withdraw</span></button></div>
+        <form id="transaction-form" novalidate>
+          <label for="amount">จำนวนเงิน <span>(ETH)</span></label>
+          <div class="amount-field"><input id="amount" type="text" inputmode="decimal" placeholder="0.00" autocomplete="off" maxlength="80" aria-describedby="amount-help" disabled><span>ETH</span></div>
+          <div class="presets" aria-label="เลือกจำนวนเงิน"><button type="button" data-amount="0.001" disabled>0.001 ETH</button><button type="button" data-amount="0.005" disabled>0.005 ETH</button><button type="button" data-amount="0.01" disabled>0.01 ETH</button></div>
+          <p id="amount-help" class="helper">กรอกทศนิยมได้ เช่น 0.001 ETH ระบบจะแปลงเป็น wei ให้เอง</p>
+          <div class="transaction-summary"><div><span>เครือข่าย</span><strong>Ethereum Sepolia</strong></div><div><span>ค่าธรรมเนียมเครือข่าย</span><span>ตรวจสอบใน MetaMask</span></div></div>
+          <button id="submit" type="submit" class="button primary submit" disabled>ฝากเงิน</button>
+          <p class="approval-note">คุณจะตรวจสอบและอนุมัติรายการใน MetaMask อีกครั้ง</p>
+        </form>
+      </section>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite">กำลังเตรียมการเชื่อมต่อ…</div>
+    <section class="activity-section" aria-labelledby="activity-title"><div class="section-heading"><div><h2 id="activity-title">รายการในครั้งนี้</h2><p class="helper">แสดงรายการที่ส่งจากหน้านี้ระหว่างที่เปิดใช้งาน</p></div><span id="activity-count" class="small-tag">0 รายการ</span></div><div id="activity-empty" class="empty-state"><span class="empty-icon" aria-hidden="true">⇄</span><div><h3>พร้อมสำหรับรายการแรก</h3><p>เมื่อคุณฝากหรือถอนเงิน รายละเอียดธุรกรรมจะแสดงที่นี่</p></div></div><ul id="activity-list" class="activity-list"></ul></section>
+    <section class="connection-strip" aria-label="รายละเอียดการเชื่อมต่อ"><div><span class="detail-label">Smart Contract</span><a id="contract-link" href="https://sepolia.etherscan.io/address/0xa01A3Fc53EF4d3070405A6D911114F65c06cFe1f" target="_blank" rel="noopener noreferrer">0xa01A…cFe1f ↗</a></div><div><span class="detail-label">อ่านข้อมูลผ่าน</span><strong id="rpc-state">Infura · กำลังตรวจสอบ</strong></div><div><span class="detail-label">เครือข่ายทดสอบ</span><strong>Chain ID 11155111</strong></div></section>
+  </main>
+  <noscript>กรุณาเปิด JavaScript เพื่อใช้งาน DApp</noscript>
+</body>
+</html>
