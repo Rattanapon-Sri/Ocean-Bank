@@ -2,6 +2,8 @@
 
 Assignment 5 — ระบบธนาคารจำลองบน Ethereum Sepolia Testnet
 
+> โปรเจกต์มหาวิทยาลัยเพื่อการศึกษา ใช้เฉพาะ Sepolia Testnet และเหรียญทดสอบ ไม่ใช่บริการธนาคารหรือรับฝากเงินจริง
+
 เว็บ HTML/CSS/JavaScript ธีม Ocean Bank สำหรับฝาก ถอน และอ่านยอดเงินบน Ethereum Sepolia
 
 ## เปิดบนเครื่อง
